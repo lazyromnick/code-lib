@@ -1579,17 +1579,16 @@ const sum = arr.reduce((acc, x) => acc + x, 0);`,
         
         renderSnippetList();
 
-        // Service Worker
+        //Service Worker 
         if ('serviceWorker' in navigator) {
-            window.addEventListener('load', () => {
-                navigator.serviceWorker.register('data:application/javascript;base64,' + btoa(`
-                    const CACHE_NAME = 'code-lib-v1';
-                    self.addEventListener('install', e => {
-                        e.waitUntil(caches.open(CACHE_NAME).then(cache => cache.addAll(['/'])));
-                    });
-                    self.addEventListener('fetch', e => {
-                        e.respondWith(caches.match(e.request).then(r => r || fetch(e.request)));
-                    });
-                `)).catch(() => {});
-            });
+  window.addEventListener('load', () => {
+    navigator.serviceWorker
+      .register('js/service-worker.js')
+      .then(reg => {
+        console.log('SW registered:', reg.scope);
+      })
+      .catch(err => {
+        console.error('SW registration failed:', err);
+      });
+  });
         }
