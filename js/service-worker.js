@@ -1,4 +1,4 @@
-const CACHE_NAME = "code-snippet-library-v2.5.1"; //github update
+const CACHE_NAME = "code-snippet-library-v2.5.2"; //github update
 
 const ASSETS_TO_CACHE = [
   "./",
@@ -67,7 +67,7 @@ self.addEventListener("fetch", event => {
         console.log('[SW] Fetch failed, serving fallback:', err);
         // Return cached index.html for navigation requests
         if (event.request.mode === 'navigate') {
-          return caches.match('/index.html');
+          return caches.match('./index.html');
         }
       });
     })
