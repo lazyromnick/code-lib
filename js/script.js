@@ -1583,7 +1583,7 @@ const sum = arr.reduce((acc, x) => acc + x, 0);`,
         if ('serviceWorker' in navigator) {
   window.addEventListener('load', () => {
     navigator.serviceWorker
-      .register('js/service-worker.js')
+      .register('./js/service-worker.js')
       .then(reg => {
         console.log('SW registered:', reg.scope);
       })
