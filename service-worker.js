@@ -1,9 +1,13 @@
-const CACHE_NAME = "code-snippet-library-v2.5.2"; //github update
+const CACHE_NAME = "code-snippet-library-v2.5.3"; //github update - cache
 
 const ASSETS_TO_CACHE = [
-  "./",
-  "./index.html",
-  "./manifest.json",
+  './',
+  './index.html',
+  './manifest.json',
+  './css/style.css',
+  './js/script.js',
+  './icons/icon-192-v2.png',
+  './icons/icon-512-v2.png',
   // Add CDN resources
   "https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css",
   "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css",
